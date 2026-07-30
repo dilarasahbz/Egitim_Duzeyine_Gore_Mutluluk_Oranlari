@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EĞİTİM DÜZEYİNDE MUTLULUK</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="projeson_files/libs/clipboard/clipboard.min.js"></script>
+<script src="projeson_files/libs/quarto-html/quarto.js"></script>
+<script src="projeson_files/libs/quarto-html/popper.min.js"></script>
+<script src="projeson_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="projeson_files/libs/quarto-html/anchor.min.js"></script>
+<link href="projeson_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="projeson_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="projeson_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="projeson_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="projeson_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+<link href="projeson_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="projeson_files/libs/tabwid-1.1.3/tabwid.js"></script>
+<script src="projeson_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="projeson_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">EĞİTİM DÜZEYİNDE MUTLULUK</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Beyza İmancı 22255008 , Dilara Şahbaz 21255010 , Gülsüm Oytun 22255032 , Nurgül Şayan 22255020 , Zeynep Sude Arslan 21255056</p>
+<section id="quarto" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Bu proje TÜİK’ten alınarak oluşturulmuştur ve proje öncelikle Yükseköğretim mezunlarının mutluluk seviyesini araştırmak için seçilmiştir . Projenin verilerini inceledğimizde diğer eğitim düzeylerinin mutluluk yüzdesinin görme fırsatı da bulduk . Proje sayesinde eğitim düzeylerindeki mutluluk oranlarını biribirleriyle kıyaslayabildik.</p>
+<p>Bu dokümanın hazırlanmasında aşağıdaki paketler kullanılmıştır . Bu paketlerin install.packages() fonksiyonu ile kurulması ve library() fonksiyonu ile aktif hale getirilmesi gereklidir .</p>
+<ul>
+<li><p>readxl</p></li>
+<li><p>tidyverse</p></li>
+<li><p>knitr</p></li>
+<li><p>kableExtra</p></li>
+<li><p>flextable</p></li>
+<li><p>ggplot2</p></li>
+<li><p>dplyr</p></li>
+</ul>
+</section>
+<section id="verilerin-okutulmasi" class="level2">
+<h2 class="anchored" data-anchor-id="verilerin-okutulmasi">VERİLERİN OKUTULMASI</h2>
+<p>Projenin bu ortama aktarılması için ‘readxl’ paketi indirilmiş ve okutulmuştur . `</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cran.rstudio.com/"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.3.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xlsx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'xlsx' was built under R version 4.3.2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'knitr' was built under R version 4.3.2</code></pre>
+</div>
+</div>
+</section>
+<section id="veri-setinin-aktarılması" class="level2">
+<h2 class="anchored" data-anchor-id="veri-setinin-aktarılması">Veri Setinin Aktarılması</h2>
+<p>Excel tablosundaki veri seti read_excel() fonksiyonu ile projeson adlı veri setine atanmıştır ve View() fonksiyonu ile veri seti gösterilmiştir .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>projeson<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">'projeson.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(projeson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="verilerin-incelenmesi" class="level3">
+<h3 class="anchored" data-anchor-id="verilerin-incelenmesi">Verilerin İncelenmesi</h3>
+<p>Aşağıdaki komutlardan biri olan head() fonksiyonu projeson adlı veri setinin ilk 6 satırının gösterilmesi için kullanılmıştır . Diğer komut olan tail() fonksiyonu ise projeson adlı veri setinin son 6 satırının gösterilmesi için kullanılmıştır . Sonrasında elde dilen sonuçları flextable() fonksiyonu ile tablo formatına dönüştürdük.bu komut içinde |&gt; şeklinde bir operatör kullandık bu operatör pipe operatörü olarak isimlendirilir ve fonksiyonları zincir şeklinde birbirine bağlamak için kullanılır .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'flextable' was built under R version 4.3.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(projeson)<span class="sc">|&gt;</span> <span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div class="tabwid"><style>.cl-e51e48fa{}.cl-e5114bb4{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e516dba6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e516dbb0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e516fb90{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e516fb9a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e516fba4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e516fba5{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e516fba6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e516fbae{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e51e48fa"><thead><tr style="overflow-wrap:break-word;"><th class="cl-e516fb90"><p class="cl-e516dba6"><span class="cl-e5114bb4">Duygu Durumu</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Yil</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Yuksekogretim</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Lise ve dengi okul</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Ilkokul veya ortaokul</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Ilkokul</span></p></th><th class="cl-e516fb9a"><p class="cl-e516dbb0"><span class="cl-e5114bb4">Bir Okul Bitirmedi</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e516fba4"><p class="cl-e516dba6"><span class="cl-e5114bb4">Mutlu</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,004</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">66.8</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">58.2</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">58.3</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">57.7</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">54.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e516fba4"><p class="cl-e516dba6"><span class="cl-e5114bb4">Orta</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,004</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">25.6</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">31.4</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">31.3</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">30.7</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">27.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e516fba4"><p class="cl-e516dba6"><span class="cl-e5114bb4">Mutsuz</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,004</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">7.7</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">10.4</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">10.4</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">11.6</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">18.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e516fba4"><p class="cl-e516dba6"><span class="cl-e5114bb4">Mutlu</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,005</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">64.0</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">61.5</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">61.4</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">55.2</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">54.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e516fba4"><p class="cl-e516dba6"><span class="cl-e5114bb4">Orta</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,005</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">26.2</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">29.6</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">26.0</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">31.8</span></p></td><td class="cl-e516fba5"><p class="cl-e516dbb0"><span class="cl-e5114bb4">27.8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e516fba6"><p class="cl-e516dba6"><span class="cl-e5114bb4">Mutsuz</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">2,005</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">9.8</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">8.9</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">12.6</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">13.1</span></p></td><td class="cl-e516fbae"><p class="cl-e516dbb0"><span class="cl-e5114bb4">18.1</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(projeson)<span class="sc">|&gt;</span> <span class="fu">flextable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div class="tabwid"><style>.cl-e549e942{}.cl-e53c8806{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e541d9aa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e541d9b4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e541f8ae{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e541f8af{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e541f8b8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e541f8c2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e541f8c3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e541f8c4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e549e942"><thead><tr style="overflow-wrap:break-word;"><th class="cl-e541f8ae"><p class="cl-e541d9aa"><span class="cl-e53c8806">Duygu Durumu</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Yil</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Yuksekogretim</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Lise ve dengi okul</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Ilkokul veya ortaokul</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Ilkokul</span></p></th><th class="cl-e541f8af"><p class="cl-e541d9b4"><span class="cl-e53c8806">Bir Okul Bitirmedi</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e541f8b8"><p class="cl-e541d9aa"><span class="cl-e53c8806">Mutlu</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,021</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">47.64876</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">47.77167</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">45.74254</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">51.35398</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">54.36150</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e541f8b8"><p class="cl-e541d9aa"><span class="cl-e53c8806">Orta</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,021</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">35.17888</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">35.63955</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">35.84219</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">33.16483</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">29.21192</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e541f8b8"><p class="cl-e541d9aa"><span class="cl-e53c8806">Mutsuz</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,021</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">17.17236</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">16.58878</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">18.41527</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">15.48119</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">16.42658</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e541f8b8"><p class="cl-e541d9aa"><span class="cl-e53c8806">Mutlu</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,022</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">48.21296</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">48.31201</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">46.33879</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">52.67758</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">51.72064</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e541f8b8"><p class="cl-e541d9aa"><span class="cl-e53c8806">Orta</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,022</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">38.67359</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">35.59329</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">36.64533</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">31.43657</span></p></td><td class="cl-e541f8c2"><p class="cl-e541d9b4"><span class="cl-e53c8806">28.93625</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e541f8c3"><p class="cl-e541d9aa"><span class="cl-e53c8806">Mutsuz</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">2,022</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">13.11345</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">16.09471</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">17.01588</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">15.88585</span></p></td><td class="cl-e541f8c4"><p class="cl-e541d9b4"><span class="cl-e53c8806">19.34311</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>projeson veri setindeki değişkenlerin tipleri str() fonksiyonu ile görülür.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(projeson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [57 × 7] (S3: tbl_df/tbl/data.frame)
+ $ Duygu Durumu         : chr [1:57] "Mutlu" "Orta" "Mutsuz" "Mutlu" ...
+ $ Yil                  : num [1:57] 2004 2004 2004 2005 2005 ...
+ $ Yuksekogretim        : num [1:57] 66.8 25.6 7.7 64 26.2 9.8 68.4 26.3 5.4 61.9 ...
+ $ Lise ve dengi okul   : num [1:57] 58.2 31.4 10.4 61.5 29.6 8.9 59.3 31.3 9.4 62.8 ...
+ $ Ilkokul veya ortaokul: num [1:57] 58.3 31.3 10.4 61.4 26 12.6 53.9 34.1 12.1 61.6 ...
+ $ Ilkokul              : num [1:57] 57.7 30.7 11.6 55.2 31.8 13.1 57.5 30.6 11.9 59.3 ...
+ $ Bir Okul Bitirmedi   : num [1:57] 54.4 27 18.6 54 27.8 18.1 55.1 27.8 17.1 57.8 ...</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="değişken-tipinin-değiştirilmesi" class="level2">
+<h2 class="anchored" data-anchor-id="değişken-tipinin-değiştirilmesi">Değişken Tipinin Değiştirilmesi</h2>
+<p>Veri setine bakıldığında değişken tipleri ‘num’ , ‘chr’ olarak görülür . Değişken tipi ‘chr’ olan değişkenin tipi görülenlerden farklı olan ’Factor’olarak isimlendirilen değişken tipine dönüştürülür .Bu işlem istatistiksel analizlerin yapılması ve grafiklerin çizilmesi için gerekir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span><span class="ot">&lt;-</span><span class="fu">as.factor</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(projeson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [57 × 7] (S3: tbl_df/tbl/data.frame)
+ $ Duygu Durumu         : Factor w/ 3 levels "Mutlu","Mutsuz",..: 1 3 2 1 3 2 1 3 2 1 ...
+ $ Yil                  : num [1:57] 2004 2004 2004 2005 2005 ...
+ $ Yuksekogretim        : num [1:57] 66.8 25.6 7.7 64 26.2 9.8 68.4 26.3 5.4 61.9 ...
+ $ Lise ve dengi okul   : num [1:57] 58.2 31.4 10.4 61.5 29.6 8.9 59.3 31.3 9.4 62.8 ...
+ $ Ilkokul veya ortaokul: num [1:57] 58.3 31.3 10.4 61.4 26 12.6 53.9 34.1 12.1 61.6 ...
+ $ Ilkokul              : num [1:57] 57.7 30.7 11.6 55.2 31.8 13.1 57.5 30.6 11.9 59.3 ...
+ $ Bir Okul Bitirmedi   : num [1:57] 54.4 27 18.6 54 27.8 18.1 55.1 27.8 17.1 57.8 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="verilerin-ortalamasımedyanıstandart-sapması" class="level2">
+<h2 class="anchored" data-anchor-id="verilerin-ortalamasımedyanıstandart-sapması">Verilerin Ortalaması,Medyanı,Standart Sapması</h2>
+<p>Veri setindeki değişken tipi ‘num’ olan değişkenlerinin ortalamalarının bulunması için mean() fonksiyonu, medyanlarının bulunması için median() fonksiyonu , standart sapmalarının bulunması için sd() fonksiyonu kullanılır .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">##ortalama</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(projeson<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33.33528</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Lise ve dengi okul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33.3316</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Ilkokul veya ortaokul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33.33158</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(projeson<span class="sc">$</span>Ilkokul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33.3386</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33.33175</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(projeson<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29.49</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Lise ve dengi okul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32.499</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Ilkokul veya ortaokul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32.10923</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(projeson<span class="sc">$</span>Ilkokul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31.8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27.7</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(projeson<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.347</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Lise ve dengi okul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19.17225</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Ilkokul veya ortaokul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.63136</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(projeson<span class="sc">$</span>Ilkokul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.14238</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.42651</code></pre>
+</div>
+</div>
+</section>
+<section id="istatistiklerin-hesaplanması" class="level2">
+<h2 class="anchored" data-anchor-id="istatistiklerin-hesaplanması">İstatistiklerin Hesaplanması</h2>
+<p>Aşağıdaki komutta summary() fonksiyonu ile projeson veri setindeki iki değişkenin istatistiği hesaplanmıştır .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(projeson<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.40   11.89   29.49   33.34   53.89   68.40 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(projeson<span class="sc">$</span>Ilkokul)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.10   14.11   31.80   33.34   52.50   62.94 </code></pre>
+</div>
+</div>
+<p>quantile() fonksiyonu bir veri kümesinin belirli bir yüzdesine karşılık gelen değerleri hesaplar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      0%      25%      50%      75%     100% 
+11.66214 17.80000 27.70000 54.38294 63.53700 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Ilkokul veya ortaokul</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      0%      25%      50%      75%     100% 
+ 7.90000 12.60000 32.10923 52.60443 64.40000 </code></pre>
+</div>
+</div>
+</section>
+<section id="grafikler" class="level2">
+<h2 class="anchored" data-anchor-id="grafikler">Grafikler</h2>
+<p>Hipotez testi öncesinde bir değişim olup olmadığını ilk önce grafik olarak görebiliriz. Bu amaçla aşağıdaki grafikleri kullanabiliriz.</p>
+<p>Aşağıdaki ‘tidyverse’ paketi grafik çizimi için install.packages() fonksiyonu ile indirilir ve library() fonksiyonu ile okutulur .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into 'C:/Users/Asus/AppData/Local/R/win-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'tidyverse' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Asus\AppData\Local\Temp\Rtmp21PpLl\downloaded_packages</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tibble' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'forcats' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ purrr::compose() masks flextable::compose()
+✖ dplyr::filter()  masks stats::filter()
+✖ dplyr::lag()     masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+</section>
+<section id="nokta-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="nokta-grafiği">Nokta Grafiği</h2>
+<p>Aşağıdaki iki komuttan birinde 2004-2022 yıllarına göre ilkokul veya ortaokul mezunlarının duygu durumlarını incelemek için nokta grafiği yapıldı . Her bir nokta yıllara göre ilkokul veya ortaokul mezunlarının 3 duygu durumunun oranını ifade ediyor . Diğerinde ise aynı şekilde yükseköğretim mezunlarının duygu durumlarının nokta grafiği çizildi .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> projeson , <span class="fu">aes</span>(<span class="at">x =</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>                                      , <span class="at">y =</span><span class="st">`</span><span class="at">Ilkokul veya ortaokul</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2004-2022 yılları İlkokul veya Ortaokul mezunlarının duygu durumu"</span>, <span class="at">x =</span> <span class="st">"duygu durumu"</span>, <span class="at">y =</span> <span class="st">"yuzdelikler"</span>) <span class="sc">+</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> projeson , <span class="fu">aes</span>(<span class="at">x =</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                                      , <span class="at">y =</span>Yuksekogretim)) <span class="sc">+</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2004-2022 yıllarının yuksekogretim mezunlarının duygu durumu"</span>, <span class="at">x =</span> <span class="st">"duygu durumu"</span>, <span class="at">y =</span> <span class="st">"yuzdelikler"</span>) <span class="sc">+</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="histogram" class="level2">
+<h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
+<p>Histogramda “Mutlu”, “Orta” ve “Mutsuz” duygu durumlarının tüm veri setine göre 2004-2022 yıllarınadaki dağılımları bulundu .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>)</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> projeson, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="kutu-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="kutu-grafiği">Kutu Grafiği</h2>
+<p>Aşağıdaki komutlarda İlkokul , Yükseköğretim , Bir Okul Bİtirmedi düzeylerinin yıllara göre Duygu Durumu oranlarının kutu grafiği yapıldı .Bu grafikler için önce group_by() fonksiyonu ile verileri gruplandırıp daha sonra summarise() fonksiyonu ile ortalamaları hesaplayabiliriz . Genel olarak grafiklere bakıldığında yıl ilerledikçe mutluluk oranının azaldığı , mutsuzluluk oranının arttığı ve orta duygu durumunun çok değişmediği görülür .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>projeson <span class="sc">|&gt;</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Yil, <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>, <span class="at">y =</span> Ilkokul, <span class="at">color =</span> <span class="fu">as.factor</span>(Yil))) <span class="sc">+</span></span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Duygu"</span>,</span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Yuzdelikler"</span>,</span>
+<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"ILKOKUL DUYGU DURUMU"</span></span>
+<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>projeson <span class="sc">|&gt;</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Yil, <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>, <span class="at">y =</span> Yuksekogretim, <span class="at">color =</span> <span class="fu">as.factor</span>(Yil))) <span class="sc">+</span></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Duygu"</span>,</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Yuzdel??kler"</span>,</span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"YILLARA GÖRE YÜKSEKÖĞRETİM DUYGU DURUMU"</span></span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>projeson <span class="sc">|&gt;</span></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Yil, <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>, <span class="at">color =</span> <span class="fu">as.factor</span>(Yil))) <span class="sc">+</span></span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Duygu"</span>,</span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Yuzdelİkler"</span>,</span>
+<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"YILLARA GÖRE BİR OKUL BİTİRMEYENLER DUYGU DURUMU"</span></span>
+<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="sütun-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="sütun-grafiği">Sütun Grafiği</h2>
+<p>Aşağıda 2 sütun grafiği komutları yazılmıştır . Sırasıyla yıllara göre okul bitirmemiş olanların ve yükseköğretim duygu durumlarının sütun grafiği verilmiştir . Komut çalıştırıldığında grafikte yıllara göre okul bitirmemiş olanlarının ve yükseköğretim mezunlarının duygu durumları gösterilmektedir . X ekseninde yalnızca mutlu yazmaktadır . Aslında sırasıyla mutlu , mutsuz , orta durumlarının yüzdesel değerleri görülür .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span><span class="ot">&lt;-</span><span class="fu">as.factor</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>,</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"DUYGU DURUMLARI"</span>,  <span class="at">ylab =</span> <span class="st">"BIR OKUL BITIRMEMI??"</span>,</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>,</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"YILLARA GORE OKUL BITIRMEMIS OLANLARIN DUYGU DURUMLARI "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span><span class="ot">&lt;-</span><span class="fu">as.factor</span>(projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(projeson<span class="sc">$</span>Yuksekogretim,</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"DUYGU DURUMLARI"</span>,</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"YUKSEKOGRENIM"</span>,</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>,</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"pink"</span>,</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"YILLARA GORE YUKSEKOGRENIM MEZUNLARININ DUYGU DURUMLARI "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><img src="images/2022%20mutluluk%20oranı.jpg" class="img-fluid" width="583"></p>
+</section>
+<section id="daire-dilimi-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="daire-dilimi-grafiği">Daire Dilimi Grafiği</h2>
+<p><img src="Resim3.png" class="img-fluid" width="465"></p>
+<p><img src="Resim2.png" class="img-fluid" width="469"></p>
+</section>
+<section id="sütun-çizgi-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="sütun-çizgi-grafiği">Sütun Çizgi Grafiği</h2>
+<p>Aşağıda sütun çizgi grafiğinin komutu verilmiştir . Bu komut çalıştırıldığında grafikte duygu durumlarının 2002-2022 yıllarına göre dağılımı sütunlar şeklinde ve aynı zamanda çizgisel olarak görülür .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>,</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"yellow"</span>,</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Mutluluk Oranlari"</span>,</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Frekans"</span>,</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Mutluluk Oranlari Frekansi"</span>,</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"o"</span>,</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">3</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in plot.window(xlim, ylim, log = log, ...): grafiksel parametre "type"
+çok eski</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in axis(if (horiz) 2 else 1, at = at.l, labels = names.arg, lty =
+axis.lty, : grafiksel parametre "type" çok eski</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...):
+grafiksel parametre "type" çok eski</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in axis(if (horiz) 1 else 2, cex.axis = cex.axis, ...): grafiksel
+parametre "type" çok eski</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>,</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> projeson<span class="sc">$</span><span class="st">`</span><span class="at">Duygu Durumu</span><span class="st">`</span>,</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"o"</span>,</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"black"</span>,</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">3</span></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="hipotez-testleri" class="level2">
+<h2 class="anchored" data-anchor-id="hipotez-testleri">Hipotez Testleri</h2>
+<p>Bir veya daha fazla anakütle hakkında ortaya atılan iddiaların doğruluğunu araştırmak için yapılan testlere Hipotez Testleri denir . Örneğin 2004 ve 2022 yıllarındaki Yükseköğretim mezunlarının duygu durumunun ortalamasını araştırmak istediğimizi varsayalım .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'kableExtra' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'kableExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    group_rows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:flextable':
+
+    as_image, footnote</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>projeson<span class="sc">|&gt;</span><span class="fu">group_by</span>(Yil)<span class="sc">|&gt;</span></span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(Yuksekogretim))<span class="sc">|&gt;</span></span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a><span class="at">col.names=</span><span class="fu">c</span>(<span class="st">"Yıllar"</span>, <span class="st">"Ortalama Duygu Durumu"</span>),</span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a><span class="at">digits =</span> <span class="dv">3</span></span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>)<span class="sc">|&gt;</span></span>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Yıllar</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama Duygu Durumu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2004</td>
+<td style="text-align: right;">33.367</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2005</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">33.367</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">33.300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">33.337</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">33.334</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">33.333</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<table class="table">
+<caption>2004 ve 2022 yılındaki Yükseköğretim mezunlarının duygu durumunun ortalaması</caption>
+<thead>
+<tr class="header">
+<th>2004</th>
+<th>2022</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>33.333</td>
+<td>33.367</td>
+</tr>
+</tbody>
+</table>
+<p>Yukarıda yazdığımız kodu çalıştırdığımızda sonuçlar birbirine çok yakın çıkmıştır . Yukarıda bulmuş olduğumuz ortalama değerler ve yapmış olduğumuz grafikler bir fikir vermekle birlikte kesin kararımızı ancak istatistiksel testler ile verebiliriz .</p>
+<p>2004 ve 2022 yılları Yükseköğretim mezunlarının duygu durumunun ortalaması için yapılan tabloda iki verinin birbirine eşit olup olmadğını test etmek istedik .</p>
+<p>H0 : Mu2004 = Mu2022</p>
+<p>H1 : Mu2004 eşit değildir Mu2022</p>
+<p>Yukarıdaki hipotezi test etmek için t testi kullanılabilir . Ancak bunu yapmak için verilerin normal dağılıma sahip olması gerekir .</p>
+</section>
+<section id="yoğunluk-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="yoğunluk-grafiği">Yoğunluk Grafiği</h2>
+<p>Aşağıdaki grafiklere bakıldığında verilerin normal dağılıma uygun olmadıkları görülür .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(projeson, <span class="fu">aes</span>(<span class="at">x=</span>Yuksekogretim)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">colour=</span><span class="st">"black"</span>)<span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="dv">2004</span> <span class="sc">~</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(projeson, <span class="fu">aes</span>(<span class="st">`</span><span class="at">Lise ve dengi okul</span><span class="st">`</span>)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">colour=</span><span class="st">"green"</span>)<span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="dv">2012</span> <span class="sc">~</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(projeson, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">colour=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="dv">2022</span> <span class="sc">~</span>.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-28-3.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="qq-grafiği" class="level2">
+<h2 class="anchored" data-anchor-id="qq-grafiği">QQ Grafiği</h2>
+<p>İkinci bir seçenek olarak da QQ grafiği kullanılabilir .QQ grafiklerinin görülmesi için ‘ggpubr’ paketiinde ggqqplot() fonksiyonu kullanılır . Sonraki adım olarak aşağısındaki komut çalıştırılır . QQ grafiklerine bakıldığında bazı noktaların güven aralığının dışında (gölgeli alan ) olduğu görülmektedir . Bu sebepten dolayı veriler normal dağılıma sahip değildir .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggpubr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing package into 'C:/Users/Asus/AppData/Local/R/win-library/4.3'
+(as 'lib' is unspecified)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'ggpubr' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Asus\AppData\Local\Temp\Rtmp21PpLl\downloaded_packages</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggpubr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ggpubr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:flextable':
+
+    border, font, rotate</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(projeson, <span class="fu">aes</span>(<span class="at">sample =</span>Yuksekogretim)) <span class="sc">+</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span><span class="dv">2004</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(projeson, <span class="fu">aes</span>(<span class="at">sample =</span><span class="st">`</span><span class="at">Bir Okul Bitirmedi</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Yil)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="projeson_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Yukarıdaki grafik yöntemler verilerinin dağılımı hakkında subjektif bir değerlendirme sunmaktadır . Bu nedenle verilerin normal dağılıma sahip olup olmadığının objektif bir şekilde belirlenmesi daha doğru olur . Bu amaçla Shapiro-Wilk Normallik testini kullanabiliriz .</p>
+<p>H0 : Veriler normal dağılıma sahiptir.</p>
+<p>H1 : Veriler normal dağılıma sahip değildir .</p>
+</section>
+<section id="shapiro-wilk-normallik-testleri" class="level2">
+<h2 class="anchored" data-anchor-id="shapiro-wilk-normallik-testleri">Shapiro-Wilk Normallik Testleri</h2>
+<p>Shapiro-Wilk normallik testi için shapiro.test() fonksiyonu kullanılır . Aşağıdaki testlere bakıldığında p - değerinin %5 ten küçük olduğu görülür . Bu yüzden H0 hipotezi reddedilir .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>Yuksekogretim_2004<span class="ot">=</span>projeson<span class="sc">|&gt;</span><span class="fu">filter</span>(Yil<span class="sc">==</span><span class="dv">2004</span>)<span class="sc">|&gt;</span><span class="fu">select</span>(Yuksekogretim)</span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(Yuksekogretim_2004<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  Yuksekogretim_2004$Yuksekogretim
+W = 0.95074, p-value = 0.5726</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>Yuksekogretim_2022<span class="ot">=</span>projeson<span class="sc">|&gt;</span><span class="fu">filter</span>(Yil<span class="sc">==</span><span class="dv">2022</span>)<span class="sc">|&gt;</span><span class="fu">select</span>(Yuksekogretim)</span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(Yuksekogretim_2022<span class="sc">$</span>Yuksekogretim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  Yuksekogretim_2022$Yuksekogretim
+W = 0.93506, p-value = 0.5079</code></pre>
+</div>
+</div>
+<p>Yukarıdaki testler sonuçlardan anakütlelerden en az birisi normal dağılıma sahip olmadığı için hipotez testlerinde t testi kulanılamaz . Fakat proje kampsamında anakütleler normal dağılıma sahip olmadığı durumlar içinde hipotez testleri için şimdilik t testi kullanılacaktır .</p>
+</section>
+<section id="t-testi" class="level2">
+<h2 class="anchored" data-anchor-id="t-testi">T Testi</h2>
+<p>Şimdi verilerin normal dağılıma varsayarak hipotez testine devam edelim .</p>
+<p>Varyanslar eşit ve eşit değil durumları için p- değeri %5 ten büyük olmasından dolayı H0 hipotezi reddedilemez . Yani %5 anlam düzeyinde Yükseköğretim eğitim düzeyinde duygu durumu ortalamalarında bir değişiklik görülmemiştir .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x=</span>projeson<span class="sc">$</span>Yuksekogretim[projeson<span class="sc">$</span>Yil<span class="sc">==</span><span class="dv">2004</span>], <span class="at">y=</span>projeson<span class="sc">$</span>Yuksekogretim[projeson<span class="sc">$</span>Yil<span class="sc">==</span><span class="dv">2022</span>],</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="at">mu=</span><span class="dv">0</span>,</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="at">alternative=</span><span class="st">"t"</span>,</span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a><span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  projeson$Yuksekogretim[projeson$Yil == 2004] and projeson$Yuksekogretim[projeson$Yil == 2022]
+t = 0.0016344, df = 4, p-value = 0.9988
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -56.59131  56.65798
+sample estimates:
+mean of x mean of y 
+ 33.36667  33.33333 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x=</span>projeson<span class="sc">$</span>Yuksekogretim[projeson<span class="sc">$</span>Yil<span class="sc">==</span><span class="dv">2004</span>], <span class="at">y=</span>projeson<span class="sc">$</span>Yuksekogretim[projeson<span class="sc">$</span>Yil<span class="sc">==</span><span class="dv">2022</span>],</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="at">mu=</span><span class="dv">0</span>,<span class="at">alternative=</span><span class="st">"t"</span>,</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="at">var.equal=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  projeson$Yuksekogretim[projeson$Yil == 2004] and projeson$Yuksekogretim[projeson$Yil == 2022]
+t = 0.0016344, df = 3.271, p-value = 0.9988
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -61.93258  61.99925
+sample estimates:
+mean of x mean of y 
+ 33.36667  33.33333 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>, <span class="at">type =</span> <span class="st">"visual"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' is in use and will not be installed</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
