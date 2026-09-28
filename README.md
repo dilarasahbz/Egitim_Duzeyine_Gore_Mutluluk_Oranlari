@@ -4,15 +4,6 @@ Uygulamalı İstatistik dersi kapsamında, TÜİK verileri kullanılarak hazırl
 
 **Ekip:** 5 kişi
 
-## İçerik
-
-| Dosya | Açıklama |
-|---|---|
-| `Egitim_Duzeyinde_Mutluluk_Raporu.pdf` | Projenin tam raporu |
-| `projeson.qmd` | Analizin yapıldığı R / Quarto kaynak dosyası |
-| `projeson.xlsx` | Kullanılan veri seti |
-| `eğitim düzeyinde mutluluk oranları.pptx` | Proje sunumu |
-
 ## Kullanılan Veri
 
 Veri seti, TÜİK'in hanehalkı araştırmalarından alınan "Eğitim Düzeylerine Göre Mutluluk Oranları" verisidir; 2004-2022 yılları arasını, yükseköğretim, lise ve dengi okul, ilkokul veya ortaokul, ilkokul ve bir okul bitirmedi eğitim düzeylerini kapsar.
