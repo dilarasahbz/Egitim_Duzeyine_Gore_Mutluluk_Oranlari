@@ -1,6 +1,6 @@
 # Happiness by Education Level
 
-A statistics project prepared for the Applied Statistics course using data from TÜİK. The project examines the relationship between education level and happiness rate through descriptive statistics, charts, hypothesis tests, chi-square tests, F distribution, and regression analysis.
+A statistics project prepared for the Applied Statistics course using data from TÜİK (Turkish Statistical Institute). The project examines the relationship between education level and happiness rate through descriptive statistics, charts, hypothesis tests, chi-square tests of independence, F distribution, and regression analysis.
 
 **Team:** 5 members
 
@@ -14,7 +14,7 @@ The dataset is the "Happiness Rates by Education Level" data from TÜİK's house
 2. Descriptive statistics (mean, median, standard deviation, quantile)
 3. Charts (scatter, histogram, box, bar, pie, bar-line)
 4. Hypothesis tests (t-test, one and two population proportion tests)
-5. Chi-square tests (independence tests)
+5. Chi-square tests of independence
 6. F distribution and variance test
 7. Regression analysis
 
@@ -24,6 +24,10 @@ The dataset is the "Happiness Rates by Education Level" data from TÜİK's house
 readxl, tidyverse, knitr, kableExtra, flextable, ggplot2, dplyr, car, ggpubr
 ```
 
+## How to Run
+
+Open the `projeson.qmd` file in RStudio (or any environment that supports Quarto) and render it. The `projeson.xlsx` data file must be in the same folder as the `.qmd` file.
+
 ## Conclusion
 
-In the t-test, no significant difference was found in the mean happiness of higher education graduates between 2004 and 2022. However, the chi-square independence tests identified statistically significant relationships between happiness and both education level and year. The regression model showed that education level has an overall significant effect on happiness, and that this effect is particularly pronounced at the higher education and primary school levels.
+In the t-test, no significant difference was found in the mean happiness of higher education graduates between 2004 and 2022. However, the chi-square tests of independence identified statistically significant relationships between happiness and both education level and year. The regression model showed that education level has an overall significant effect on happiness, and that this effect is particularly pronounced at the higher education and primary school levels.
