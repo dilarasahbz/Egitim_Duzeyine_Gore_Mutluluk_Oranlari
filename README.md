@@ -1,33 +1,44 @@
-# Eğitim Düzeyinde Mutluluk
+# Happiness by Education Level: An Applied Statistical Analysis
 
-Uygulamalı İstatistik dersi kapsamında, TÜİK verileri kullanılarak hazırlanan bir istatistik projesidir. Projede eğitim düzeyi ile mutluluk oranı arasındaki ilişki betimsel istatistikler, grafikler, hipotez testleri, ki-kare testleri, F dağılımı ve regresyon analizi ile incelenmiştir.
+An applied statistics project analyzing the relationship between educational attainment and reported happiness rates in Turkey using official Turkish Statistical Institute (TurkStat / TÜİK) data (2004–2022). The study incorporates exploratory data analysis, parametric and non-parametric hypothesis testing, and linear regression modeling.
 
-**Ekip:** 5 kişi
+---
 
-## Kullanılan Veri
+## 📌 Project Overview
+* **Domain:** Applied Statistics, Socioeconomic Data Analysis
+* **Tools & Environment:** R, Quarto (`.qmd`), RStudio
+* **Team Size:** 5 Contributors
 
-Veri seti, TÜİK'in hanehalkı araştırmalarından alınan "Eğitim Düzeylerine Göre Mutluluk Oranları" verisidir; 2004-2022 yılları arasını, yükseköğretim, lise ve dengi okul, ilkokul veya ortaokul, ilkokul ve bir okul bitirmedi eğitim düzeylerini kapsar.
+---
 
-## Analiz Adımları
+## 📊 Dataset
+The analysis uses longitudinal survey data from **TurkStat's Household Life Satisfaction Surveys (2004–2022)**, tracking happiness proportions across five educational attainment tiers:
+* Higher Education (Bachelor's / Postgraduate)
+* High School & Vocational Equivalents
+* Primary or Lower Secondary School
+* Primary School
+* No Formal Education
 
-1. Verinin okutulması ve incelenmesi (`readxl`, `str()`, `flextable()`)
-2. Betimsel istatistikler (ortalama, medyan, standart sapma, quantile)
-3. Grafikler (nokta, histogram, kutu, sütun, daire dilimi, sütun-çizgi)
-4. Hipotez testleri (t testi, tek ve iki anakütle oran testi)
-5. Ki-kare testleri (bağımsızlık testleri)
-6. F dağılımı ve varyans testi
-7. Regresyon analizi
+---
 
-## Gereken R Paketleri
+## 🔬 Methodology & Pipeline
 
-```
-readxl, tidyverse, knitr, kableExtra, flextable, ggplot2, dplyr, car, ggpubr
-```
+1. **Data Ingestion & Inspection:** Structural checks, parsing, and tabular formatting (`readxl`, `str()`, `flextable`).
+2. **Exploratory Data Analysis (EDA):** Central tendency, spread, and quantiles (mean, median, standard deviation, IQR).
+3. **Data Visualization:** Univariate and bivariate distributions using `ggplot2` (histograms, box plots, scatter plots, grouped bar charts, and dual-axis line charts).
+4. **Hypothesis Testing:**
+   * One-sample and two-sample proportion tests
+   * Independent sample t-tests comparing historical benchmarks (2004 vs. 2022)
+5. **Categorical Association:** Chi-Square ($\chi^2$) tests of independence evaluating dependencies between education level, time (year), and happiness levels.
+6. **Variance Analysis:** F-tests for equality of variances across demographic groupings.
+7. **Regression Modeling:** Ordinary Least Squares (OLS) regression to evaluate the magnitude and significance of education levels on happiness rates.
 
-## Nasıl Çalıştırılır
+---
 
-`projeson.qmd` dosyasını RStudio'da (veya Quarto destekleyen bir ortamda) açıp render edin. `projeson.xlsx` veri dosyasının `.qmd` ile aynı klasörde olması gerekir.
+## 📦 Tech Stack & Dependencies
 
-## Sonuç
-
-T testinde 2004 ve 2022 yılları arasında yükseköğretim mezunlarının mutluluk ortalamasında anlamlı bir fark bulunamamıştır; ancak ki-kare bağımsızlık testlerinde hem eğitim düzeyi hem de yıl ile mutluluk arasında istatistiksel olarak anlamlı ilişkiler tespit edilmiştir. Regresyon modelinde eğitim seviyesinin mutluluk üzerinde genel olarak anlamlı bir etkisi olduğu, bu etkinin özellikle yükseköğretim ve ilkokul düzeylerinde belirgin olduğu gösterilmiştir.
+```r
+install.packages(c(
+  "readxl", "tidyverse", "knitr", "kableExtra", 
+  "flextable", "ggplot2", "dplyr", "car", "ggpubr"
+))
