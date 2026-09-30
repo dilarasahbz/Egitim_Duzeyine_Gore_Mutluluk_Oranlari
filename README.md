@@ -1,44 +1,29 @@
-# Happiness by Education Level: An Applied Statistical Analysis
+# Happiness by Education Level
 
-An applied statistics project analyzing the relationship between educational attainment and reported happiness rates in Turkey using official Turkish Statistical Institute (TurkStat / TÜİK) data (2004–2022). The study incorporates exploratory data analysis, parametric and non-parametric hypothesis testing, and linear regression modeling.
+A statistics project prepared for the Applied Statistics course using data from TÜİK. The project examines the relationship between education level and happiness rate through descriptive statistics, charts, hypothesis tests, chi-square tests, F distribution, and regression analysis.
 
----
+**Team:** 5 members
 
-## 📌 Project Overview
-* **Domain:** Applied Statistics, Socioeconomic Data Analysis
-* **Tools & Environment:** R, Quarto (`.qmd`), RStudio
-* **Team Size:** 5 Contributors
+## Data Used
 
----
+The dataset is the "Happiness Rates by Education Level" data from TÜİK's household surveys. It covers the years 2004-2022 and the following education levels: higher education, high school or equivalent, primary or secondary school, and primary school and did not complete any school.
 
-## 📊 Dataset
-The analysis uses longitudinal survey data from **TurkStat's Household Life Satisfaction Surveys (2004–2022)**, tracking happiness proportions across five educational attainment tiers:
-* Higher Education (Bachelor's / Postgraduate)
-* High School & Vocational Equivalents
-* Primary or Lower Secondary School
-* Primary School
-* No Formal Education
+## Analysis Steps
 
----
+1. Reading and examining the data (`readxl`, `str()`, `flextable()`)
+2. Descriptive statistics (mean, median, standard deviation, quantile)
+3. Charts (scatter, histogram, box, bar, pie, bar-line)
+4. Hypothesis tests (t-test, one and two population proportion tests)
+5. Chi-square tests (independence tests)
+6. F distribution and variance test
+7. Regression analysis
 
-## 🔬 Methodology & Pipeline
+## Required R Packages
 
-1. **Data Ingestion & Inspection:** Structural checks, parsing, and tabular formatting (`readxl`, `str()`, `flextable`).
-2. **Exploratory Data Analysis (EDA):** Central tendency, spread, and quantiles (mean, median, standard deviation, IQR).
-3. **Data Visualization:** Univariate and bivariate distributions using `ggplot2` (histograms, box plots, scatter plots, grouped bar charts, and dual-axis line charts).
-4. **Hypothesis Testing:**
-   * One-sample and two-sample proportion tests
-   * Independent sample t-tests comparing historical benchmarks (2004 vs. 2022)
-5. **Categorical Association:** Chi-Square ($\chi^2$) tests of independence evaluating dependencies between education level, time (year), and happiness levels.
-6. **Variance Analysis:** F-tests for equality of variances across demographic groupings.
-7. **Regression Modeling:** Ordinary Least Squares (OLS) regression to evaluate the magnitude and significance of education levels on happiness rates.
+```
+readxl, tidyverse, knitr, kableExtra, flextable, ggplot2, dplyr, car, ggpubr
+```
 
----
+## Conclusion
 
-## 📦 Tech Stack & Dependencies
-
-```r
-install.packages(c(
-  "readxl", "tidyverse", "knitr", "kableExtra", 
-  "flextable", "ggplot2", "dplyr", "car", "ggpubr"
-))
+In the t-test, no significant difference was found in the mean happiness of higher education graduates between 2004 and 2022. However, the chi-square independence tests identified statistically significant relationships between happiness and both education level and year. The regression model showed that education level has an overall significant effect on happiness, and that this effect is particularly pronounced at the higher education and primary school levels.
