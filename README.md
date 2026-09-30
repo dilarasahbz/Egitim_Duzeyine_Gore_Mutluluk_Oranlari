@@ -24,10 +24,6 @@ The dataset is the "Happiness Rates by Education Level" data from TÜİK's house
 readxl, tidyverse, knitr, kableExtra, flextable, ggplot2, dplyr, car, ggpubr
 ```
 
-## How to Run
-
-Open the `projeson.qmd` file in RStudio (or any environment that supports Quarto) and render it. The `projeson.xlsx` data file must be in the same folder as the `.qmd` file.
-
 ## Conclusion
 
 In the t-test, no significant difference was found in the mean happiness of higher education graduates between 2004 and 2022. However, the chi-square tests of independence identified statistically significant relationships between happiness and both education level and year. The regression model showed that education level has an overall significant effect on happiness, and that this effect is particularly pronounced at the higher education and primary school levels.
